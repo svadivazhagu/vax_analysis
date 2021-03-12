@@ -1,10 +1,25 @@
 # coding: utf-8
 import pandas as pd
 
-data = pd.read_csv("vax.csv")
+vax_data = pd.read_csv("vax.csv")
 
-states = pd.unique(data['location'])
 
-for state in states:
-    state_info = data[data['location']==state]
-    state_info.to_csv("state_vax/"+state+".csv", header=True, index=False)
+def state_separate(data):
+    for state in pd.unique(data['location']):
+        data[data['location'] == state].to_csv("state_vax/" + state + ".csv", header=True,
+                                               index=False)
+
+
+
+
+# do it by date now instead of state
+
+def date_separate(data):
+    for date in pd.unique(data['date']):
+        data[data['date'] == date].to_csv("date_vax/" + date + ".csv", header=True,
+                                          index=False)
+
+
+date_separate(vax_data)
+
+
