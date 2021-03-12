@@ -1,5 +1,5 @@
 /venv/
 .vscode/
 .idea/
-/*_vax/
-
+/state_vax/
+/date_vax/
