@@ -7,6 +7,8 @@ url = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/v
 
 vax_data = pd.read_csv(url)
 
+vax_data.to_csv('vax.csv', index=False, header=True)
+
 
 #separate into state's own csvs
 def state_separate(data):
